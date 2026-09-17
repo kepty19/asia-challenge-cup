@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cup | Asia Challenge Cup</title>
+  <meta name="description" content="Asia Challenge Cup 第1回から第4回までの予選と順位トーナメント。">
+  <link rel="icon" href="assets/cilie-logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="cup">
+  <div class="grain"></div>
+  <header class="site-header" data-header></header>
+
+  <section class="page-hero">
+    <p class="en">The Cup</p>
+    <h1>Cup</h1>
+    <div class="gold-line"></div>
+    <p class="lede">第1回から第4回まで。各大会を予選と順位トーナメントに分けて記録します。</p>
+  </section>
+
+  <section class="section">
+    <div class="edition-switch">
+      <button class="is-on" type="button" data-edition="1">
+        <small>Edition 01</small>
+        <strong>第1回大会</strong>
+      </button>
+      <button type="button" data-edition="2">
+        <small>Edition 02</small>
+        <strong>第2回大会</strong>
+      </button>
+      <button type="button" data-edition="3">
+        <small>Edition 03</small>
+        <strong>第3回大会</strong>
+      </button>
+      <button type="button" data-edition="4">
+        <small>Edition 04</small>
+        <strong>第4回大会</strong>
+      </button>
+    </div>
+
+    <div data-edition-panel="1">
+      <div class="edition-meta">
+        <div><small>大会</small><b>ASIA CHALLENGE CUP 2025</b></div>
+        <div><small>日程</small><b>2025年12月6日 – 7日</b></div>
+        <div><small>会場</small><b>Dynamic Football Camp / U-15</b></div>
+      </div>
+      <div class="stage-switch">
+        <button class="is-on" type="button" data-stage="qual">予選</button>
+        <button type="button" data-stage="final">順位トーナメント</button>
+      </div>
+      <div data-stage-panel="qual">
+        <div class="matches">
+          <article class="match">
+            <div>
+              <div class="meta">予選 · Match 01</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">0 — 1</div>
+            <div class="team" style="text-align:right">Debsirin School <small>THAILAND</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">予選 · Match 02</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">2 — 0</div>
+            <div class="team" style="text-align:right">BVB Thailand <small>THAILAND</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">予選 · Match 03</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">6 — 0</div>
+            <div class="team" style="text-align:right">Gijang SC <small>KOREA</small></div>
+          </article>
+        </div>
+        <p class="note">第1回の予選は、公開された遠征レポートに基づく記録です。公式記録と異なる場合は大会本部を優先します。</p>
+      </div>
+      <div data-stage-panel="final" hidden>
+        <div class="matches">
+          <article class="match">
+            <div>
+              <div class="meta">順位トーナメント · Match 04</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">0 — 0</div>
+            <div class="team" style="text-align:right">Assumption College Sriracha <small>THAILAND</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">順位トーナメント · Match 05</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">1 — 0</div>
+            <div class="team" style="text-align:right">Gijang SC <small>KOREA</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">順位トーナメント · Match 06</div>
+              <div class="team">Iwaki FC <small>JAPAN</small></div>
+            </div>
+            <div class="score">2 — 0</div>
+            <div class="team" style="text-align:right">Cilie Sports Club <small>THAILAND</small></div>
+          </article>
+        </div>
+        <p class="note">順位は <a href="https://www.cilie.co/tournaments/asia-challenge-cup-2025" target="_blank" rel="noreferrer">公式ページ</a> の Ranking を正とします。</p>
+        <div class="frame reveal" style="margin-top:28px; min-height:auto">
+          <img src="assets/ranking.jpg" alt="第1回大会 公式ランキング" style="min-height:auto">
+          <span class="frame-caption">Official ranking · 第1回</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-edition-panel="2" hidden>
+      <div class="edition-meta">
+        <div><small>大会</small><b>Asia Challenge Cup in Osaka</b></div>
+        <div><small>日程</small><b>2026年1月17日 – 18日</b></div>
+        <div><small>会場</small><b>J-GREEN堺 / U-10 · U-12</b></div>
+      </div>
+      <div class="stage-switch">
+        <button class="is-on" type="button" data-stage="qual">予選</button>
+        <button type="button" data-stage="final">順位トーナメント</button>
+      </div>
+      <div data-stage-panel="qual">
+        <div class="matches">
+          <article class="match">
+            <div>
+              <div class="meta">予選リーグ · U10</div>
+              <div class="team">Cerezo Osaka <small>JAPAN</small></div>
+            </div>
+            <div class="score">1 — 0</div>
+            <div class="team" style="text-align:right">Cemano Kobe <small>JAPAN</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">予選リーグ · U10</div>
+              <div class="team">Vissel Kobe <small>JAPAN</small></div>
+            </div>
+            <div class="score">2 — 0</div>
+            <div class="team" style="text-align:right">FC Tamashima <small>JAPAN</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">予選リーグ · U12</div>
+              <div class="team">Cilie Sports Club <small>THAILAND</small></div>
+            </div>
+            <div class="score">3 — 1</div>
+            <div class="team" style="text-align:right">EXE90 FC <small>JAPAN</small></div>
+          </article>
+          <article class="match">
+            <div>
+              <div class="meta">予選リーグ · U12</div>
+              <div class="team">ASA Football Academy <small>AUSTRALIA</small></div>
+            </div>
+            <div class="score">2 — 1</div>
+            <div class="team" style="text-align:right">Despacio Fútbol <small>JAPAN</small></div>
+          </article>
+        </div>
+        <p class="note">Day 1 は2グループ・各6チームのリーグ戦。掲載は公式ページで公開されたスコアの一部です。全記録は <a href="https://www.cilie.co/tournaments/asia-challenge-cup-in-osaka" target="_blank" rel="noreferrer">大阪大会ページ</a> を参照してください。</p>
+      </div>
+      <div data-stage-panel="final" hidden>
+        <div class="empty-board">
+          <p class="kicker">Placement</p>
+          <h3>順位トーナメント</h3>
+          <p class="muted">Day 2 は1位から12位までを決める順位トーナメント。引き分けはPK、決勝のみ延長あり。</p>
+        </div>
+        <p class="note">詳細な対戦表は大会本部の公開に合わせて更新します。</p>
+      </div>
+    </div>
+
+    <div data-edition-panel="3" hidden>
+      <div class="edition-meta">
+        <div><small>大会</small><b>第3回 Asia Challenge Cup</b></div>
+        <div><small>日程</small><b>調整中</b></div>
+        <div><small>会場</small><b>調整中</b></div>
+      </div>
+      <div class="stage-switch">
+        <button class="is-on" type="button" data-stage="qual">予選</button>
+        <button type="button" data-stage="final">順位トーナメント</button>
+      </div>
+      <div data-stage-panel="qual">
+        <div class="empty-board">
+          <p class="kicker">Qualifying</p>
+          <h3>予選 · 記録準備中</h3>
+          <p class="muted">第3回大会の予選対戦表は、公開され次第この欄に掲載します。</p>
+        </div>
+      </div>
+      <div data-stage-panel="final" hidden>
+        <div class="empty-board">
+          <p class="kicker">Placement</p>
+          <h3>順位トーナメント · 記録準備中</h3>
+          <p class="muted">第3回大会の順位トーナメントは、公開され次第この欄に掲載します。</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-edition-panel="4" hidden>
+      <div class="edition-meta">
+        <div><small>大会</small><b>第4回 Asia Challenge Cup</b></div>
+        <div><small>日程</small><b>調整中</b></div>
+        <div><small>会場</small><b>調整中</b></div>
+      </div>
+      <div class="stage-switch">
+        <button class="is-on" type="button" data-stage="qual">予選</button>
+        <button type="button" data-stage="final">順位トーナメント</button>
+      </div>
+      <div data-stage-panel="qual">
+        <div class="empty-board">
+          <p class="kicker">Qualifying</p>
+          <h3>予選 · 記録準備中</h3>
+          <p class="muted">第4回大会の予選対戦表は、公開され次第この欄に掲載します。</p>
+        </div>
+      </div>
+      <div data-stage-panel="final" hidden>
+        <div class="empty-board">
+          <p class="kicker">Placement</p>
+          <h3>順位トーナメント · 記録準備中</h3>
+          <p class="muted">第4回大会の順位トーナメントは、公開され次第この欄に掲載します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" data-footer></footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

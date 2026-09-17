@@ -294,7 +294,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(231,73,109),.12), rgba(7,4,10,.35));
+  background: linear-gradient(180deg, rgba(231, 73, 109, .12), rgba(7,4,10,.35));
 }
 .frame-caption {
   position: absolute;
@@ -341,7 +341,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 32px 24px;
   border: 1px solid var(--line);
   min-height: 240px;
-  background: linear-gradient(180deg, rgba(231,73,109),.06), transparent);
+  background: linear-gradient(180deg, rgba(231, 73, 109, .06), transparent);
   transition: .35s ease;
 }
 .pillar:hover {
@@ -417,7 +417,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 128px 8vw 36px;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(800px 300px at 80% 0%, rgba(231,73,109),.22), transparent 70%),
+    radial-gradient(800px 300px at 80% 0%, rgba(231, 73, 109, .22), transparent 70%),
     linear-gradient(180deg, #160910, var(--void));
 }
 .page-hero h1 {
@@ -456,7 +456,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .portrait-card {
   border: 1px solid var(--line);
   padding: 28px;
-  background: linear-gradient(180deg, rgba(231,73,109),.08), rgba(7,4,10,.4));
+  background: linear-gradient(180deg, rgba(231, 73, 109, .08), rgba(7,4,10,.4));
 }
 .portrait-card img {
   width: 100%;
@@ -513,8 +513,12 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .rule p, .rule li { color: var(--muted); font-size: 14px; }
 .rule ol, .rule ul { padding-left: 18px; }
 
-.day-switch { display: flex; gap: 12px; margin: 28px 0 36px; }
-.day-switch button {
+.day-switch,
+.edition-switch,
+.stage-switch { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 36px; }
+.day-switch button,
+.edition-switch button,
+.stage-switch button {
   border: 1px solid var(--line);
   padding: 12px 22px;
   letter-spacing: .24em;
@@ -522,10 +526,77 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   text-transform: uppercase;
   color: var(--muted);
 }
-.day-switch button.is-on {
+.day-switch button.is-on,
+.edition-switch button.is-on,
+.stage-switch button.is-on {
   border-color: var(--gold);
   color: var(--gold-bright);
 }
+.edition-switch { margin-bottom: 18px; }
+.edition-switch button {
+  min-width: 150px;
+  text-align: left;
+  letter-spacing: .12em;
+  text-transform: none;
+}
+.edition-switch button small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .24em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.edition-switch button strong {
+  display: block;
+  font-family: var(--jp);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ivory);
+}
+.edition-switch button.is-on {
+  background: linear-gradient(180deg, rgba(231, 73, 109, .16), transparent);
+}
+.stage-switch { margin-top: 8px; }
+.stage-switch button.is-on {
+  border-color: var(--cilie);
+  color: var(--ivory);
+}
+.edition-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.edition-meta div {
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+}
+.edition-meta small {
+  display: block;
+  letter-spacing: .22em;
+  color: var(--gold);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.edition-meta b {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--jp);
+  font-weight: 500;
+}
+.empty-board {
+  border: 1px dashed var(--line);
+  padding: 56px 28px;
+  text-align: center;
+}
+.empty-board h3 {
+  font-family: var(--jp);
+  font-size: 28px;
+  margin: 12px 0;
+  font-weight: 500;
+}
+.articles.three { grid-template-columns: repeat(3, 1fr); }
 .matches { display: grid; gap: 14px; }
 .match {
   display: grid;
@@ -534,7 +605,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   gap: 18px;
   border: 1px solid var(--line);
   padding: 22px 28px;
-  background: linear-gradient(90deg, rgba(231,73,109),.05), transparent 40%, rgba(231,73,109),.05));
+  background: linear-gradient(90deg, rgba(231, 73, 109, .05), transparent 40%, rgba(231, 73, 109, .05));
 }
 .match .team { font-family: var(--jp); font-size: 18px; min-width: 0; overflow-wrap: anywhere; }
 .match .team small { display: block; color: var(--muted); font-family: var(--ui); font-size: 11px; letter-spacing: .18em; }
@@ -564,7 +635,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   flex-direction: column;
 }
 .tier.featured {
-  background: linear-gradient(180deg, rgba(231,73,109),.18), rgba(7,4,10,.2));
+  background: linear-gradient(180deg, rgba(231, 73, 109, .18), rgba(7,4,10,.2));
   border-color: var(--gold);
 }
 .tier h3 { font-family: var(--display); letter-spacing: .24em; font-size: 14px; color: var(--gold-bright); }
@@ -659,7 +730,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 72px 56px;
   border: 1px solid var(--gold);
   background:
-    linear-gradient(120deg, rgba(231,73,109),.2), rgba(7,4,10,.4)),
+    linear-gradient(120deg, rgba(231, 73, 109, .2), rgba(7,4,10,.4)),
     url("../assets/team.webp") center/cover;
   background-blend-mode: multiply;
   display: flex;
@@ -758,7 +829,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   }
   .header-cta.is-open { top: auto; }
   .menu-toggle { display: block; letter-spacing: .24em; font-size: 11px; color: var(--gold); }
-  .hero-meta, .stats, .pillars, .cards, .clubs, .rules, .articles, .films, .partners, .values, .split, .split.reverse, .tiers, .gallery, .footer-grid, .form-row, .cta-band {
+  .hero-meta, .stats, .pillars, .cards, .clubs, .rules, .articles, .articles.three, .films, .partners, .values, .split, .split.reverse, .tiers, .gallery, .footer-grid, .form-row, .cta-band, .edition-meta {
     grid-template-columns: 1fr;
   }
   .hero h1 { font-size: 64px; }

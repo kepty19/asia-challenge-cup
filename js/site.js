@@ -3,7 +3,7 @@ const NAV = [
   { href: "message.html", id: "message", label: "Message" },
   { href: "vision.html", id: "vision", label: "Vision" },
   { href: "overview.html", id: "overview", label: "Overview" },
-  { href: "results.html", id: "results", label: "Results" },
+  { href: "cup.html", id: "cup", label: "Cup" },
   { href: "sponsors.html", id: "sponsors", label: "Partners" },
   { href: "gallery.html", id: "gallery", label: "Gallery" }
 ];
@@ -25,7 +25,7 @@ function renderChrome() {
         ${NAV.map((item) => `<a href="${item.href}" class="${page === item.id ? "is-active" : ""}">${item.label}</a>`).join("")}
       </nav>
       <div class="header-cta" data-cta>
-        <a class="btn" href="sponsors.html#packages">Partner With Us</a>
+        <a class="btn" href="sponsors.html#inquiry">Partner With Us</a>
       </div>
       <button class="menu-toggle" type="button" data-menu>Menu</button>
     `;
@@ -99,16 +99,33 @@ function bindReveal() {
   });
 }
 
-function bindDays() {
-  const buttons = document.querySelectorAll("[data-day]");
-  const panels = document.querySelectorAll("[data-day-panel]");
+function bindSwitch(btnSel, panelSel, key) {
+  const buttons = document.querySelectorAll(btnSel);
+  const panels = document.querySelectorAll(panelSel);
   if (!buttons.length) return;
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = btn.dataset.day;
+      const id = btn.dataset[key];
       buttons.forEach((b) => b.classList.toggle("is-on", b === btn));
       panels.forEach((panel) => {
-        panel.hidden = panel.dataset.dayPanel !== id;
+        panel.hidden = panel.dataset[`${key}Panel`] !== id;
+      });
+    });
+  });
+}
+
+function bindCup() {
+  bindSwitch("[data-edition]", "[data-edition-panel]", "edition");
+  document.querySelectorAll("[data-edition-panel]").forEach((edition) => {
+    const buttons = edition.querySelectorAll("[data-stage]");
+    const panels = edition.querySelectorAll("[data-stage-panel]");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.stage;
+        buttons.forEach((b) => b.classList.toggle("is-on", b === btn));
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.stagePanel !== id;
+        });
       });
     });
   });
@@ -149,6 +166,6 @@ renderChrome();
 bindMenu();
 bindHeader();
 bindReveal();
-bindDays();
+bindCup();
 bindForm();
 bindPreloader();
