@@ -2,9 +2,10 @@
   --void: #07040a;
   --ink: #12080e;
   --wine: #3a1524;
-  --rose: #e8a0b8;
-  --rose-deep: #c45c7a;
+  --rose: #f28aa3;
+  --rose-deep: #e7496d;
   --blush: #f3d0dc;
+  --cilie: #e7496d;
   --gold: #d4af7a;
   --gold-bright: #f3e0b5;
   --ivory: #f7efe8;
@@ -94,7 +95,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   gap: 12px;
   min-width: 180px;
 }
-.brand img { width: 34px; height: 40px; object-fit: contain; }
+.brand img { width: 46px; height: 46px; object-fit: contain; }
 .brand-name {
   display: flex;
   flex-direction: column;
@@ -153,7 +154,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 }
 .btn:hover { background: var(--gold); color: var(--ink); }
 .btn-solid {
-  background: linear-gradient(90deg, #e8b4c6, #c45c7a 55%, #9a3d5c);
+  background: linear-gradient(90deg, #f28aa3, #e7496d 55%, #b11f48);
   border-color: transparent;
   color: var(--ivory);
 }
@@ -173,7 +174,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   background:
     linear-gradient(180deg, rgba(7,4,10,.78) 0%, rgba(7,4,10,.28) 36%, rgba(7,4,10,.9) 100%),
     linear-gradient(90deg, rgba(18,8,14,.62), transparent 48%),
-    url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+    url("../assets/kids.webp") center/cover no-repeat;
   transform: scale(1.08);
   animation: kenburns 22s ease-in-out infinite alternate;
 }
@@ -293,7 +294,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(196,92,122,.12), rgba(7,4,10,.35));
+  background: linear-gradient(180deg, rgba(231,73,109),.12), rgba(7,4,10,.35));
 }
 .frame-caption {
   position: absolute;
@@ -340,7 +341,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 32px 24px;
   border: 1px solid var(--line);
   min-height: 240px;
-  background: linear-gradient(180deg, rgba(196,92,122,.06), transparent);
+  background: linear-gradient(180deg, rgba(231,73,109),.06), transparent);
   transition: .35s ease;
 }
 .pillar:hover {
@@ -416,7 +417,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 128px 8vw 36px;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(800px 300px at 80% 0%, rgba(196,92,122,.22), transparent 70%),
+    radial-gradient(800px 300px at 80% 0%, rgba(231,73,109),.22), transparent 70%),
     linear-gradient(180deg, #160910, var(--void));
 }
 .page-hero h1 {
@@ -455,13 +456,14 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .portrait-card {
   border: 1px solid var(--line);
   padding: 28px;
-  background: linear-gradient(180deg, rgba(196,92,122,.08), rgba(7,4,10,.4));
+  background: linear-gradient(180deg, rgba(231,73,109),.08), rgba(7,4,10,.4));
 }
 .portrait-card img {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  filter: grayscale(.25) contrast(1.05);
+  object-position: center top;
+  filter: grayscale(.08) contrast(1.05);
   margin-bottom: 20px;
 }
 .portrait-card h3 { font-family: var(--jp); font-size: 28px; font-weight: 500; }
@@ -532,7 +534,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   gap: 18px;
   border: 1px solid var(--line);
   padding: 22px 28px;
-  background: linear-gradient(90deg, rgba(196,92,122,.05), transparent 40%, rgba(196,92,122,.05));
+  background: linear-gradient(90deg, rgba(231,73,109),.05), transparent 40%, rgba(231,73,109),.05));
 }
 .match .team { font-family: var(--jp); font-size: 18px; min-width: 0; overflow-wrap: anywhere; }
 .match .team small { display: block; color: var(--muted); font-family: var(--ui); font-size: 11px; letter-spacing: .18em; }
@@ -562,7 +564,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   flex-direction: column;
 }
 .tier.featured {
-  background: linear-gradient(180deg, rgba(196,92,122,.18), rgba(7,4,10,.2));
+  background: linear-gradient(180deg, rgba(231,73,109),.18), rgba(7,4,10,.2));
   border-color: var(--gold);
 }
 .tier h3 { font-family: var(--display); letter-spacing: .24em; font-size: 14px; color: var(--gold-bright); }
@@ -657,8 +659,8 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 72px 56px;
   border: 1px solid var(--gold);
   background:
-    linear-gradient(120deg, rgba(196,92,122,.2), rgba(7,4,10,.4)),
-    url("https://images.unsplash.com/photo-1522778119026-d647f0526d3e?auto=format&fit=crop&w=1800&q=80") center/cover;
+    linear-gradient(120deg, rgba(231,73,109),.2), rgba(7,4,10,.4)),
+    url("../assets/team.webp") center/cover;
   background-blend-mode: multiply;
   display: flex;
   justify-content: space-between;

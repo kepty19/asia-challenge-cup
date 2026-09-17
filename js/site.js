@@ -15,10 +15,10 @@ function renderChrome() {
   if (header) {
     header.innerHTML = `
       <a class="brand" href="index.html">
-        <img src="assets/crest.svg" alt="Asia Challenge Cup crest">
+        <img src="assets/cilie-logo.webp" alt="Cilie Sports Club">
         <span class="brand-name">
           <strong>ASIA CHALLENGE CUP</strong>
-          <span>Cilie Sports Club</span>
+          <span>Cilie Sports Club Thailand</span>
         </span>
       </a>
       <nav class="nav" data-nav>
@@ -35,7 +35,7 @@ function renderChrome() {
       <div class="footer-grid">
         <div>
           <h4>Presented By</h4>
-          <p>Cilie Sports Club<br>Khao Kilo, Surasak, Si Racha, Chon Buri, Thailand</p>
+          <p>Cilie Sports Club Thailand<br>Khao Kilo, Surasak, Si Racha, Chon Buri</p>
           <p style="margin-top:12px">JP (+66) 94-310-0724<br>TH (+66) 99-330-9090</p>
         </div>
         <div>
@@ -43,10 +43,11 @@ function renderChrome() {
           <p>${NAV.map((item) => `<a href="${item.href}">${item.label}</a>`).join("<br>")}</p>
         </div>
         <div>
-          <h4>Official</h4>
-          <p><a href="https://www.cilie.co/" target="_blank" rel="noreferrer">cilie.co</a><br>
+          <h4>Official Club</h4>
+          <p><a href="https://www.cilie.co/" target="_blank" rel="noreferrer">www.cilie.co</a><br>
           <a href="https://www.cilie.co/sports-club" target="_blank" rel="noreferrer">Sports Club</a><br>
-          <a href="sponsors.html">Sponsorship Desk</a></p>
+          <a href="https://www.cilie.co/tournaments/asia-challenge-cup-2025" target="_blank" rel="noreferrer">ACC 2025 on cilie.co</a><br>
+          <a href="https://www.cilie.co/sports-club/contact" target="_blank" rel="noreferrer">お問い合わせ</a></p>
         </div>
       </div>
       <div class="legal">
@@ -127,7 +128,7 @@ function bindForm() {
     const body = encodeURIComponent(
       `Asia Challenge Cup 協賛・お問い合わせ\n\nお名前: ${name}\n会社名: ${company}\nメール: ${email}\nご関心: ${interest}\n\n${message}`
     );
-    window.location.href = `https://www.cilie.co/sports-club`;
+    window.location.href = `https://www.cilie.co/sports-club/contact`;
     const note = form.querySelector("[data-form-note]");
     if (note) {
       note.textContent = "公式サイトの問い合わせ窓口へ移動します。お急ぎの場合は JP (+66) 94-310-0724 までご連絡ください。";
