@@ -1,16 +1,19 @@
 :root {
-  --void: #07040a;
-  --ink: #12080e;
-  --wine: #3a1524;
-  --rose: #f28aa3;
-  --rose-deep: #e7496d;
-  --blush: #f3d0dc;
+  --void: #fff7f9;
+  --paper: #ffffff;
+  --ink: #2c141c;
+  --wine: #5a2234;
+  --rose: #e7496d;
+  --rose-deep: #c92d56;
+  --blush: #f7d6e0;
+  --blush-soft: #fceef2;
   --cilie: #e7496d;
-  --gold: #d4af7a;
-  --gold-bright: #f3e0b5;
-  --ivory: #f7efe8;
-  --muted: #b8a8ae;
-  --line: rgba(212, 175, 122, 0.28);
+  --gold: #b07a3d;
+  --gold-bright: #9a6830;
+  --ivory: #2c141c;
+  --muted: #8d6570;
+  --line: rgba(231, 73, 109, 0.16);
+  --on-photo: #fff8f6;
   --serif: "Cormorant Garamond", "Zen Old Mincho", serif;
   --jp: "Zen Old Mincho", "Cormorant Garamond", serif;
   --ui: "Outfit", "Hiragino Sans", sans-serif;
@@ -20,8 +23,11 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--void);
-  color: var(--ivory);
+  background:
+    radial-gradient(1200px 520px at 12% -10%, rgba(247, 214, 224, .9), transparent 58%),
+    radial-gradient(900px 420px at 100% 8%, rgba(252, 238, 242, .95), transparent 54%),
+    var(--void);
+  color: var(--ink);
   font-family: var(--ui);
   font-weight: 300;
   line-height: 1.7;
@@ -36,7 +42,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   position: fixed;
   inset: 0;
   z-index: 80;
-  opacity: 0.09;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -44,7 +50,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: var(--void);
+  background: linear-gradient(180deg, #fff, var(--blush-soft));
   display: grid;
   place-items: center;
   transition: opacity .8s ease, visibility .8s ease;
@@ -83,11 +89,25 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   transition: background .4s ease, border-color .4s ease, padding .4s ease;
   border-bottom: 1px solid transparent;
 }
-.site-header.is-scrolled {
-  background: rgba(7, 4, 10, 0.78);
+.site-header.is-scrolled,
+body:not([data-page="home"]) .site-header {
+  background: rgba(255, 247, 249, 0.88);
   backdrop-filter: blur(18px);
   border-bottom-color: var(--line);
   padding: 12px 36px;
+}
+body[data-page="home"] .site-header:not(.is-scrolled) .brand-name strong,
+body[data-page="home"] .site-header:not(.is-scrolled) .nav a:hover,
+body[data-page="home"] .site-header:not(.is-scrolled) .nav a.is-active {
+  color: var(--on-photo);
+}
+body[data-page="home"] .site-header:not(.is-scrolled) .brand-name span,
+body[data-page="home"] .site-header:not(.is-scrolled) .nav a {
+  color: rgba(247, 239, 232, .72);
+}
+body[data-page="home"] .site-header:not(.is-scrolled) .btn {
+  color: var(--on-photo);
+  border-color: rgba(243, 224, 181, .7);
 }
 .brand {
   display: flex;
@@ -106,7 +126,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   font-weight: 500;
   font-size: 11px;
   letter-spacing: .28em;
-  color: var(--gold-bright);
+  color: var(--wine);
 }
 .brand-name span {
   font-size: 9px;
@@ -126,7 +146,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   color: var(--muted);
   position: relative;
 }
-.nav a:hover, .nav a.is-active { color: var(--ivory); }
+.nav a:hover, .nav a.is-active { color: var(--ink); }
 .nav a.is-active::after,
 .nav a:hover::after {
   content: "";
@@ -172,8 +192,8 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(7,4,10,.78) 0%, rgba(7,4,10,.28) 36%, rgba(7,4,10,.9) 100%),
-    linear-gradient(90deg, rgba(18,8,14,.62), transparent 48%),
+    linear-gradient(180deg, rgba(44,20,28,.55) 0%, rgba(44,20,28,.18) 36%, rgba(44,20,28,.72) 100%),
+    linear-gradient(90deg, rgba(44,20,28,.42), transparent 48%),
     url("../assets/kids.webp") center/cover no-repeat;
   transform: scale(1.08);
   animation: kenburns 22s ease-in-out infinite alternate;
@@ -195,6 +215,9 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   color: var(--gold);
   text-transform: uppercase;
 }
+.hero .eyebrow {
+  color: #f3e0b5;
+}
 .hero h1 {
   margin-top: 18px;
   font-family: var(--serif);
@@ -202,10 +225,11 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   font-size: clamp(64px, 12vw, 168px);
   line-height: .82;
   letter-spacing: .02em;
+  color: var(--on-photo);
 }
 .hero h1 em {
   font-style: italic;
-  color: var(--blush);
+  color: #f8d4de;
   display: block;
   font-size: .62em;
 }
@@ -214,7 +238,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   margin-top: 28px;
   font-family: var(--jp);
   font-size: 16px;
-  color: rgba(247,239,232,.82);
+  color: rgba(255, 248, 246, .88);
 }
 .hero-meta {
   margin-top: 42px;
@@ -266,7 +290,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   font-family: var(--jp);
   font-size: 18px;
   max-width: 720px;
-  color: rgba(247,239,232,.86);
+  color: rgba(44, 20, 28, .78);
 }
 .muted { color: var(--muted); }
 
@@ -288,13 +312,13 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   height: 100%;
   object-fit: cover;
   min-height: 520px;
-  filter: saturate(.7) contrast(1.05);
+  filter: saturate(.92) contrast(1.04);
 }
 .frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(231, 73, 109, .12), rgba(7,4,10,.35));
+  background: linear-gradient(180deg, rgba(231, 73, 109, .08), rgba(44, 20, 28, .18));
 }
 .frame-caption {
   position: absolute;
@@ -309,6 +333,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--line);
+  background: rgba(255,255,255,.72);
 }
 .stat {
   padding: 36px 28px;
@@ -318,10 +343,10 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .stat b {
   display: block;
   font-family: var(--serif);
-  font-size: 48px;
+  font-size: clamp(28px, 3.6vw, 48px);
   font-weight: 500;
-  color: var(--blush);
-  line-height: 1;
+  color: var(--rose-deep);
+  line-height: 1.1;
 }
 .stat span {
   display: block;
@@ -341,7 +366,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   padding: 32px 24px;
   border: 1px solid var(--line);
   min-height: 240px;
-  background: linear-gradient(180deg, rgba(231, 73, 109, .06), transparent);
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(252, 238, 242, .7));
   transition: .35s ease;
 }
 .pillar:hover {
@@ -406,19 +431,25 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7,4,10,.15), rgba(7,4,10,.88));
+  background: linear-gradient(180deg, rgba(44,20,28,.12), rgba(44,20,28,.78));
+}
+.card,
+.card p,
+.card h3,
+.card small {
+  color: var(--on-photo);
 }
 .card > * { position: relative; z-index: 1; }
-.card small { letter-spacing: .28em; color: var(--gold); font-size: 10px; }
+.card small { letter-spacing: .28em; color: #f3e0b5; font-size: 10px; }
 .card h3 { font-family: var(--jp); font-size: 28px; margin: 10px 0; font-weight: 500; }
-.card p { color: var(--muted); font-size: 14px; }
+.card p { color: rgba(255,248,246,.82); font-size: 14px; }
 
 .page-hero {
   padding: 128px 8vw 36px;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(800px 300px at 80% 0%, rgba(231, 73, 109, .22), transparent 70%),
-    linear-gradient(180deg, #160910, var(--void));
+    radial-gradient(800px 300px at 80% 0%, rgba(231, 73, 109, .12), transparent 70%),
+    linear-gradient(180deg, #ffffff, var(--void));
 }
 .page-hero h1 {
   font-family: var(--jp);
@@ -456,7 +487,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .portrait-card {
   border: 1px solid var(--line);
   padding: 28px;
-  background: linear-gradient(180deg, rgba(231, 73, 109, .08), rgba(7,4,10,.4));
+  background: linear-gradient(180deg, #ffffff, var(--blush-soft));
 }
 .portrait-card img {
   width: 100%;
@@ -470,7 +501,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .portrait-card p { color: var(--muted); margin-top: 8px; font-size: 14px; }
 
 .values { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.value { background: var(--ink); padding: 48px 40px; }
+.value { background: var(--paper); padding: 48px 40px; }
 .value span { font-family: var(--display); color: var(--gold); letter-spacing: .3em; font-size: 11px; }
 .value h3 { font-family: var(--jp); font-size: 32px; margin: 12px 0 16px; font-weight: 500; }
 
@@ -494,6 +525,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   border: 1px solid var(--line);
   padding: 28px 24px;
   min-height: 180px;
+  background: rgba(255,255,255,.78);
 }
 .club .flag {
   font-family: var(--display);
@@ -508,6 +540,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .rule {
   border: 1px solid var(--line);
   padding: 28px;
+  background: rgba(255,255,255,.78);
 }
 .rule h3 { font-family: var(--jp); margin-bottom: 10px; font-size: 20px; font-weight: 500; }
 .rule p, .rule li { color: var(--muted); font-size: 14px; }
@@ -552,15 +585,15 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   font-family: var(--jp);
   font-size: 16px;
   font-weight: 500;
-  color: var(--ivory);
+  color: var(--ink);
 }
 .edition-switch button.is-on {
-  background: linear-gradient(180deg, rgba(231, 73, 109, .16), transparent);
+  background: linear-gradient(180deg, rgba(231, 73, 109, .12), transparent);
 }
 .stage-switch { margin-top: 8px; }
 .stage-switch button.is-on {
   border-color: var(--cilie);
-  color: var(--ivory);
+  color: var(--ink);
 }
 .edition-meta {
   display: grid;
@@ -589,6 +622,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   border: 1px dashed var(--line);
   padding: 56px 28px;
   text-align: center;
+  background: rgba(255,255,255,.7);
 }
 .empty-board h3 {
   font-family: var(--jp);
@@ -605,7 +639,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   gap: 18px;
   border: 1px solid var(--line);
   padding: 22px 28px;
-  background: linear-gradient(90deg, rgba(231, 73, 109, .05), transparent 40%, rgba(231, 73, 109, .05));
+  background: linear-gradient(90deg, rgba(231, 73, 109, .06), transparent 40%, rgba(231, 73, 109, .06));
 }
 .match .team { font-family: var(--jp); font-size: 18px; min-width: 0; overflow-wrap: anywhere; }
 .match .team small { display: block; color: var(--muted); font-family: var(--ui); font-size: 11px; letter-spacing: .18em; }
@@ -613,7 +647,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   font-family: var(--serif);
   font-size: clamp(28px, 4vw, 42px);
   letter-spacing: .08em;
-  color: var(--blush);
+  color: var(--rose-deep);
   min-width: 88px;
   text-align: center;
 }
@@ -635,7 +669,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   flex-direction: column;
 }
 .tier.featured {
-  background: linear-gradient(180deg, rgba(231, 73, 109, .18), rgba(7,4,10,.2));
+  background: linear-gradient(180deg, rgba(231, 73, 109, .12), rgba(255,255,255,.7));
   border-color: var(--gold);
 }
 .tier h3 { font-family: var(--display); letter-spacing: .24em; font-size: 14px; color: var(--gold-bright); }
@@ -655,7 +689,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .partner .mark {
   font-family: var(--serif);
   font-size: 28px;
-  color: var(--blush);
+  color: var(--rose-deep);
 }
 
 .partner-board {
@@ -724,8 +758,8 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(247,239,232,.08), transparent 45%),
-    linear-gradient(180deg, rgba(18,8,14,.4), rgba(7,4,10,.7));
+    linear-gradient(135deg, rgba(255,255,255,.9), transparent 45%),
+    linear-gradient(180deg, #ffffff, var(--blush-soft));
 }
 .partner-band::after {
   content: "";
@@ -753,14 +787,14 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   letter-spacing: .18em;
   font-size: 13px;
   text-transform: uppercase;
-  color: var(--ivory);
+  color: var(--ink);
 }
 .partner-lane.platinum .partner-band {
   width: 100%;
   min-height: 148px;
   background:
     radial-gradient(700px 120px at 80% 50%, rgba(212,175,122,.22), transparent 70%),
-    linear-gradient(90deg, #2a1810, #12080e 40%, #3a2418);
+    linear-gradient(90deg, #fff8f0, #fff 40%, #f7ead8);
   border-color: var(--gold);
 }
 .partner-lane.platinum .partner-band .mark { width: 52px; height: 52px; font-size: 14px; }
@@ -769,19 +803,19 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   width: 340px;
   min-height: 108px;
   background:
-    linear-gradient(90deg, rgba(212,175,122,.16), rgba(18,8,14,.55)),
-    #16100c;
+    linear-gradient(90deg, rgba(212,175,122,.18), rgba(255,255,255,.8)),
+    #fffaf3;
 }
 .partner-lane.silver .partner-band {
   width: 260px;
   min-height: 82px;
-  background: linear-gradient(90deg, rgba(184,168,174,.14), rgba(18,8,14,.6));
+  background: linear-gradient(90deg, rgba(184,168,174,.14), #ffffff);
 }
 .partner-lane.silver .partner-band .name { font-size: 12px; }
 .partner-lane.bronze .partner-band {
   width: 220px;
   min-height: 68px;
-  background: linear-gradient(90deg, rgba(176,112,64,.18), rgba(18,8,14,.65));
+  background: linear-gradient(90deg, rgba(231,73,109,.12), #ffffff);
 }
 .partner-lane.bronze .partner-band .name { font-size: 11px; letter-spacing: .14em; }
 .partner-band[data-tone="2"] { filter: hue-rotate(18deg); }
@@ -813,13 +847,18 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7,4,10,.1), rgba(7,4,10,.92));
+  background: linear-gradient(180deg, rgba(44,20,28,.08), rgba(44,20,28,.78));
+}
+.article,
+.article h3,
+.article p {
+  color: var(--on-photo);
 }
 .article > * { position: relative; z-index: 1; }
 
 .gallery {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   grid-auto-rows: 240px;
   gap: 12px;
 }
@@ -833,7 +872,8 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(.75);
+  object-position: center 18%;
+  filter: saturate(.92);
   transition: 1.2s ease;
 }
 .shot:hover img { transform: scale(1.06); }
@@ -860,7 +900,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(7,4,10,.4);
+  background: rgba(255, 247, 249, .72);
   letter-spacing: .2em;
   font-size: 10px;
 }
@@ -868,17 +908,16 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .cta-band {
   margin: 0 8vw 120px;
   padding: 72px 56px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--line);
   background:
-    linear-gradient(120deg, rgba(231, 73, 109, .2), rgba(7,4,10,.4)),
+    linear-gradient(120deg, rgba(255,255,255,.82), rgba(252, 238, 242, .88)),
     url("../assets/team.webp") center/cover;
-  background-blend-mode: multiply;
   display: flex;
   justify-content: space-between;
   align-items: end;
   gap: 32px;
 }
-.cta-band h2 { font-family: var(--jp); font-size: clamp(28px, 4vw, 48px); font-weight: 500; }
+.cta-band h2 { font-family: var(--jp); font-size: clamp(28px, 4vw, 48px); font-weight: 500; color: var(--ink); }
 
 .form {
   display: grid;
@@ -909,6 +948,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 56px 8vw 32px;
+  background: rgba(255,255,255,.55);
 }
 .footer-grid {
   display: grid;
@@ -924,7 +964,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
   margin-bottom: 16px;
 }
 .site-footer p, .site-footer a { color: var(--muted); font-size: 14px; }
-.site-footer a:hover { color: var(--ivory); }
+.site-footer a:hover { color: var(--ink); }
 .legal {
   border-top: 1px solid var(--line);
   padding-top: 18px;
@@ -962,7 +1002,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
     flex-direction: column;
     position: absolute;
     top: 64px; left: 0; right: 0;
-    background: rgba(7,4,10,.96);
+    background: rgba(255, 247, 249, .96);
     padding: 24px 22px 32px;
     gap: 18px;
     border-bottom: 1px solid var(--line);
