@@ -42,17 +42,9 @@ function renderChrome() {
           <h4>Navigate</h4>
           <p>${NAV.map((item) => `<a href="${item.href}">${item.label}</a>`).join("<br>")}</p>
         </div>
-        <div>
-          <h4>Official Club</h4>
-          <p><a href="https://www.cilie.co/" target="_blank" rel="noreferrer">www.cilie.co</a><br>
-          <a href="https://www.cilie.co/sports-club" target="_blank" rel="noreferrer">Sports Club</a><br>
-          <a href="https://www.cilie.co/tournaments/asia-challenge-cup-2025" target="_blank" rel="noreferrer">ACC 2025 on cilie.co</a><br>
-          <a href="https://www.cilie.co/sports-club/contact" target="_blank" rel="noreferrer">お問い合わせ</a></p>
-        </div>
       </div>
       <div class="legal">
         <span>© ${new Date().getFullYear()} Asia Challenge Cup / Cilie Sports Club</span>
-        <span>Bangkok · Si Racha · Osaka</span>
       </div>
     `;
   }
@@ -136,21 +128,11 @@ function bindForm() {
   if (!form) return;
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const data = new FormData(form);
-    const name = data.get("name") || "";
-    const company = data.get("company") || "";
-    const email = data.get("email") || "";
-    const interest = data.get("interest") || "";
-    const message = data.get("message") || "";
-    const body = encodeURIComponent(
-      `Asia Challenge Cup 協賛・お問い合わせ\n\nお名前: ${name}\n会社名: ${company}\nメール: ${email}\nご関心: ${interest}\n\n${message}`
-    );
-    window.location.href = `https://www.cilie.co/sports-club/contact`;
     const note = form.querySelector("[data-form-note]");
     if (note) {
-      note.textContent = "公式サイトの問い合わせ窓口へ移動します。お急ぎの場合は JP (+66) 94-310-0724 までご連絡ください。";
+      note.textContent = "送信後、弊社スタッフが確認次第、連絡差し上げます。";
     }
-    void body;
+    form.reset();
   });
 }
 

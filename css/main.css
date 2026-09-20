@@ -852,6 +852,17 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 .article p {
   color: var(--on-photo);
 }
+.article.is-soon {
+  background: linear-gradient(180deg, #ffffff, var(--blush-soft));
+  min-height: 240px;
+  justify-content: center;
+}
+.article.is-soon::before { display: none; }
+.article.is-soon,
+.article.is-soon h3,
+.article.is-soon p {
+  color: var(--ink);
+}
 .article > * { position: relative; z-index: 1; }
 
 .gallery {
@@ -950,7 +961,7 @@ h2.display span { color: var(--rose); font-style: italic; font-family: var(--ser
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 40px;
   margin-bottom: 48px;
 }
