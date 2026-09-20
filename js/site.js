@@ -54,10 +54,12 @@ function bindMenu() {
   const toggle = document.querySelector("[data-menu]");
   const nav = document.querySelector("[data-nav]");
   const cta = document.querySelector("[data-cta]");
+  const header = document.querySelector(".site-header");
   if (!toggle || !nav) return;
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
     cta?.classList.toggle("is-open", open);
+    header?.classList.toggle("is-menu-open", open);
     toggle.textContent = open ? "Close" : "Menu";
   });
 }
